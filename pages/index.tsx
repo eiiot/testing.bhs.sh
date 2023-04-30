@@ -98,7 +98,7 @@ export default function Home() {
                   <a
                     className="underline z-[999]"
                     href="
-                    https://www.github.com/eiiot/bhs-testing"
+                    https://www.github.com/eiiot/testing.bhs.sh"
                   >
                     GitHub
                   </a>
