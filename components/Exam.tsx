@@ -39,6 +39,8 @@ const disableExams = (exams: string[]): string[] => {
 
   if (exams.includes("Computer Science SL")) {
     disabled.push("Computer Science HL");
+  } else if (exams.includes("Computer Science HL")) {
+    disabled.push("Computer Science SL");
   }
 
   if (exams.includes("Economics SL")) {
