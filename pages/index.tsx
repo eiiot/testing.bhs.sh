@@ -108,7 +108,7 @@ export default function Home() {
             <button
               className="p-2 rounded-md border-neutral-200 border-[1px] bg-white fixed top-4 right-24 z-20 "
               onClick={() => {
-                document.getElementById("today").scrollIntoView({
+                document.getElementById("today")?.scrollIntoView({
                   behavior: "smooth",
                 });
               }}
