@@ -131,7 +131,7 @@ const Exam = ({ exam, date }: ExamProps) => {
       }}
       disabled={disabledExams.includes(exam.name)}
     >
-      <div className="flex flex-row space-x-2 items-center justify-end">
+      <div className="flex flex-row space-x-2 items-center justify-between w-full">
         <span className="font-semibold mr-auto">
           {exam.type.toUpperCase()} {exam.name}
         </span>
@@ -140,24 +140,8 @@ const Exam = ({ exam, date }: ExamProps) => {
           {examDates[0].date.getMinutes().toString().padStart(2, "0")}{" "}
           {examDates[0].date.getHours() >= 12 ? "PM" : "AM"}
         </span>
-        {examDates.reverse().map(
-          (examDate, index) =>
-            examDate.paper && (
-              <div
-                className={clsx(
-                  "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
-                  fraunces.className
-                )}
-                style={{ right: `${-0.25 + index * 1.4}rem` }}
-                key={examDate.paper}
-                title={"Paper " + examDate.paper}
-              >
-                {romanize(examDate.paper)}
-              </div>
-            )
-        )}
       </div>
-      <div className="flex flex-row space-x-2 items-center justify-end">
+      <div className="flex w-full flex-row space-x-2 items-center justify-end">
         <span className="text-sm text-neutral-500 mr-auto">{examLocation}</span>
         <span className="text-sm text-neutral-500">
           {/* comma seperated list of exam durations, e.g. 1h30m, 2h. If there is only one exam */}
@@ -169,6 +153,22 @@ const Exam = ({ exam, date }: ExamProps) => {
                 .replace(/, ([^,]*)$/, " and $1")}
         </span>
       </div>
+      {examDates.reverse().map(
+        (examDate, index) =>
+          examDate.paper && (
+            <div
+              className={clsx(
+                "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
+                fraunces.className
+              )}
+              style={{ right: `${-0.25 + index * 1.4}rem` }}
+              key={examDate.paper}
+              title={"Paper " + examDate.paper}
+            >
+              {romanize(examDate.paper)}
+            </div>
+          )
+      )}
     </button>
   );
 };
