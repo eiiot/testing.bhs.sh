@@ -11,14 +11,29 @@ const onboardingToast = () =>
       This is a site for Berkeley High&apos;s testing schedule. The goal is to
       help students plan their studying and work during this stressful time of
       the year. The site is designed as a calendar, with the current day
-      highlighted in <span className="text-yellow-500">yellow</span>.
+      highlighted in{" "}
+      <span
+        style={{
+          color: "rgb(234 179 8 / 1)",
+        }}
+      >
+        yellow
+      </span>
+      .
       <br />
       <br />
       Exams are shown on each day. If an exam spans over multiple days, it will
       be displayed on each of those days. You can click on an exam to add it to
-      your <span className="text-emerald-500">list of exams.</span> Once you
-      have selected exams, you can click the filter button to only show those
-      exams.
+      your{" "}
+      <span
+        style={{
+          color: "rgb(16 185 129)",
+        }}
+      >
+        list of exams.
+      </span>{" "}
+      Once you have selected exams, you can click the filter button to only show
+      those exams.
       <br />
       <br />
       IB exams have different papers for different days. Papers are displayed as
