@@ -12,6 +12,20 @@ interface ExamProps {
   date: Date;
 }
 
+// format minutes as 1h30m or xhym
+const minutesToHours = (minutes: number): string => {
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+
+  if (hours === 0) {
+    return `${remainingMinutes}m`;
+  } else if (remainingMinutes === 0) {
+    return `${hours}h`;
+  } else {
+    return `${hours}h${remainingMinutes}m`;
+  }
+};
+
 const romanize = (number: number): string => {
   switch (number) {
     case 1:
@@ -148,9 +162,9 @@ const Exam = ({ exam, date }: ExamProps) => {
         <span className="text-sm text-neutral-500">
           {/* comma seperated list of exam durations, e.g. 1h30m, 2h. If there is only one exam */}
           {examDates.length === 1
-            ? examDates[0].duration + "min"
+            ? minutesToHours(examDates[0].duration)
             : examDates
-                .map((dateInfo) => dateInfo.duration + "min")
+                .map((dateInfo) => minutesToHours(dateInfo.duration))
                 .join(", ")
                 .replace(/, ([^,]*)$/, " and $1")}
         </span>

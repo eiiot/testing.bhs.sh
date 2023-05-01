@@ -444,7 +444,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-02T08:00:00-07:00"),
         location: "Library Lab",
-        duration: 121, // 2 hours, 1 minute
+        duration: 135, // 2 hours, 1 minute
       },
     ],
     subject: "Chinese Language",
