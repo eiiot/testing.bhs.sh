@@ -408,7 +408,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-01T08:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 180, // 3 hours
       },
     ],
     subject: "Government",
@@ -420,7 +420,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-01T12:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 195, // 3 hours, 15 minutes
       },
     ],
     subject: "Chemistry",
@@ -432,7 +432,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-01T12:00:00-07:00"),
         location: "Portable 3",
-        duration: 30,
+        duration: 180, // 3 hours
       },
     ],
     subject: "Spanish Literature",
@@ -444,7 +444,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-02T08:00:00-07:00"),
         location: "Library Lab",
-        duration: 30,
+        duration: 121, // 2 hours, 1 minute
       },
     ],
     subject: "Chinese Language",
@@ -456,7 +456,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-02T07:45:00-07:00"),
         location: "Donahue Gym",
-        duration: 45,
+        duration: 160, // 2 hours, 40 minutes
       },
     ],
     subject: "Environmental Science",
@@ -468,7 +468,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-02T12:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 120, // 2 hours
       },
     ],
     subject: "Psychology",
@@ -480,7 +480,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-03T07:45:00-07:00"),
         location: "Donahue Gym",
-        duration: 45,
+        duration: 160, // 2 hours, 40 minutes
       },
     ],
     subject: "English Literature",
@@ -492,7 +492,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-03T12:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 180, // 3 hours
       },
     ],
     subject: "Computer Science A",
@@ -504,7 +504,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-04T08:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 130, // 2 hours, 10 minutes
       },
     ],
     subject: "Macroeconomics",
@@ -516,7 +516,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-04T12:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 180, // 3 hours
       },
     ],
     subject: "Statistics",
@@ -528,7 +528,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-05T07:45:00-07:00"),
         location: "Donahue Gym",
-        duration: 45,
+        duration: 195, // 3 hours, 15 minutes
       },
     ],
     subject: "US History",
@@ -540,7 +540,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-05T12:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 180, // 3 hours
       },
     ],
     subject: "Art History",
@@ -552,7 +552,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-08T08:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 195, // 3 hours, 15 minutes
       },
     ],
     subject: "Calculus AB",
@@ -564,7 +564,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-08T08:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 195, // 3 hours, 15 minutes
       },
     ],
     subject: "Calculus BC",
@@ -576,7 +576,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-08T12:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 180, // 3 hours
       },
     ],
     subject: "CS Principles",
@@ -588,7 +588,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-09T07:45:00-07:00"),
         location: "Donahue Gym/ TBD",
-        duration: 45,
+        duration: 195, // 3 hours, 15 minutes
       },
     ],
     subject: "English Language",
@@ -600,7 +600,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-09T08:00:00-07:00"),
         location: "Library Lab",
-        duration: 30,
+        duration: 120, // 2 hours
       },
     ],
     subject: "Japanese Language",
@@ -612,7 +612,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-09T12:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 120, // 2 hours
       },
     ],
     subject: "Physics C: Mechanics",
@@ -624,7 +624,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-09T14:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 120, // 2 hours
       },
     ],
     subject: "Physics C: E&M",
@@ -636,7 +636,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-10T07:45:00-07:00"),
         location: "Berkeley Adult School",
-        duration: 45,
+        duration: 183, // 3 hours, 3 minutes
       },
     ],
     subject: "Spanish Language",
@@ -648,7 +648,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-11T08:00:00-07:00"),
         location: "Donahue Gym",
-        duration: 30,
+        duration: 180, // 3 hours
       },
     ],
     subject: "French Language",
@@ -660,7 +660,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-11T11:45:00-07:00"),
         location: "Donahue Gym",
-        duration: 45,
+        duration: 165, // 2 hours, 45 minutes
       },
     ],
     subject: "Physics 1: Algebra",
@@ -672,7 +672,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-12T08:00:00-07:00"),
         location: "A201",
-        duration: 30,
+        duration: 160, // 2 hours, 40 minutes
       },
     ],
     subject: "Music Theory",
@@ -684,7 +684,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-12T08:00:00-07:00"),
         location: "A201",
-        duration: 30,
+        duration: 160, // 2 hours, 40 minutes
       },
     ],
     subject: "German Language",
@@ -696,7 +696,7 @@ export const apExams: ExamInfo[] = [
       {
         date: new Date("2023-05-24T07:45:00-07:00"),
         location: "Donahue Gym",
-        duration: 45,
+        duration: 165, // 2 hours, 45 minutes
       },
     ],
     subject: "Biology",
