@@ -25,7 +25,7 @@ const Day = ({ date, exams }: DayProps) => {
   return (
     <div
       className={clsx(
-        "p-3 rounded-sm border-[1px] border-neutral-200 flex flex-col space-y-2 sm:aspect-[3/2]",
+        "p-3 rounded-sm border-[1px] border-neutral-200 flex flex-col space-y-2",
         date.getDay() === 0 || date.getDay() === 6
           ? "bg-neutral-50"
           : "bg-white",
@@ -36,7 +36,7 @@ const Day = ({ date, exams }: DayProps) => {
         new Date().getDate() > date.getDate() &&
           new Date().getMonth() >= date.getMonth() &&
           new Date().getFullYear() >= date.getFullYear() &&
-          "opacity-50"
+          "opacity-50 contrast-more:opacity-100"
       )}
       id={
         new Date().getDate() === date.getDate() &&

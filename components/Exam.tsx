@@ -91,10 +91,18 @@ const Exam = ({ exam, date }: ExamProps) => {
     return null;
   }
 
+  const examLocation = // get unique locations
+    examDates
+      .map((dateInfo) => dateInfo.location)
+      .filter((location, index, self) => self.indexOf(location) === index)
+      .length === 1
+      ? examDates[0].location
+      : "Multiple locations";
+
   return (
     <button
       className={clsx(
-        "p-2 border-neutral-200 relative border-[1px] w-full rounded-sm flex flex-row space-x-2 items-center justify-end",
+        "p-2 border-neutral-200 relative border-[1px] w-full rounded-sm flex flex-col space-y-2",
         userExams.includes(exam.name) && "ring-emerald-500 ring-1",
         disabledExams.includes(exam.name) && "opacity-50 cursor-not-allowed"
       )}
@@ -107,29 +115,44 @@ const Exam = ({ exam, date }: ExamProps) => {
       }}
       disabled={disabledExams.includes(exam.name)}
     >
-      <span className="font-semibold mr-auto">
-        {exam.type.toUpperCase()} {exam.name}
-      </span>
-      <span className="text-sm text-neutral-500">
-        {examDates[0].date.getHours() % 12 || 12}:
-        {examDates[0].date.getMinutes().toString().padStart(2, "0")}{" "}
-        {examDates[0].date.getHours() >= 12 ? "PM" : "AM"}
-      </span>
-      {examDates.reverse().map(
-        (examDate, index) =>
-          examDate.paper && (
-            <div
-              className={clsx(
-                "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
-                fraunces.className
-              )}
-              style={{ right: `${-0.25 + index * 1.4}rem` }}
-              key={examDate.paper}
-            >
-              {romanize(examDate.paper)}
-            </div>
-          )
-      )}
+      <div className="flex flex-row space-x-2 items-center justify-end">
+        <span className="font-semibold mr-auto">
+          {exam.type.toUpperCase()} {exam.name}
+        </span>
+        <span className="text-sm text-neutral-500">
+          {examDates[0].date.getHours() % 12 || 12}:
+          {examDates[0].date.getMinutes().toString().padStart(2, "0")}{" "}
+          {examDates[0].date.getHours() >= 12 ? "PM" : "AM"}
+        </span>
+        {examDates.reverse().map(
+          (examDate, index) =>
+            examDate.paper && (
+              <div
+                className={clsx(
+                  "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
+                  fraunces.className
+                )}
+                style={{ right: `${-0.25 + index * 1.4}rem` }}
+                key={examDate.paper}
+                title={"Paper " + examDate.paper}
+              >
+                {romanize(examDate.paper)}
+              </div>
+            )
+        )}
+      </div>
+      <div className="flex flex-row space-x-2 items-center justify-end">
+        <span className="text-sm text-neutral-500 mr-auto">{examLocation}</span>
+        <span className="text-sm text-neutral-500">
+          {/* comma seperated list of exam durations, e.g. 1h30m, 2h. If there is only one exam */}
+          {examDates.length === 1
+            ? examDates[0].duration + "min"
+            : examDates
+                .map((dateInfo) => dateInfo.duration + "min")
+                .join(", ")
+                .replace(/, ([^,]*)$/, " and $1")}
+        </span>
+      </div>
     </button>
   );
 };
