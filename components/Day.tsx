@@ -33,12 +33,18 @@ const Day = ({ date, exams }: DayProps) => {
           new Date().getMonth() === date.getMonth() &&
           new Date().getFullYear() === date.getFullYear() &&
           "ring-yellow-500 ring-1",
-        // date is before now and, make opacity 50%
         new Date().getDate() > date.getDate() &&
           new Date().getMonth() >= date.getMonth() &&
           new Date().getFullYear() >= date.getFullYear() &&
           "opacity-50"
       )}
+      id={
+        new Date().getDate() === date.getDate() &&
+        new Date().getMonth() === date.getMonth() &&
+        new Date().getFullYear() === date.getFullYear()
+          ? "today"
+          : ""
+      }
     >
       <span className="text-neutral-500 font-light flex flex-row justify-between">
         <span>{dateToString(date)}</span>
