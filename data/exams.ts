@@ -1,5 +1,3 @@
-import { type } from "os";
-
 interface ExamDate {
   date: Date;
   location: string;
