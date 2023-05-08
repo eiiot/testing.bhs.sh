@@ -30,18 +30,18 @@ const Day = ({ date, exams }: DayProps) => {
           ? "bg-neutral-50"
           : "bg-white",
         new Date().getDate() === date.getDate() &&
-          new Date().getMonth() === date.getMonth() &&
-          new Date().getFullYear() === date.getFullYear() &&
-          "ring-yellow-500 ring-1",
-        new Date().getDate() > date.getDate() &&
-          new Date().getMonth() >= date.getMonth() &&
-          new Date().getFullYear() >= date.getFullYear() &&
-          "opacity-50 contrast-more:opacity-100"
+        new Date().getMonth() === date.getMonth() &&
+        new Date().getFullYear() === date.getFullYear() &&
+        "ring-yellow-500 ring-1",
+        // is the new date before the current date, or the month is before the current month, or the year is before the current year
+        (new Date().getDate() > date.getDate() || new Date().getMonth() > date.getMonth() || new Date().getFullYear() > date.getFullYear())
+        &&
+        "opacity-50 contrast-more:opacity-100"
       )}
       id={
         new Date().getDate() === date.getDate() &&
-        new Date().getMonth() === date.getMonth() &&
-        new Date().getFullYear() === date.getFullYear()
+          new Date().getMonth() === date.getMonth() &&
+          new Date().getFullYear() === date.getFullYear()
           ? "today"
           : ""
       }

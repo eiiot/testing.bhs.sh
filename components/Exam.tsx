@@ -144,13 +144,12 @@ const Exam = ({ exam, date }: ExamProps) => {
       <div className="flex w-full flex-row space-x-2 items-center justify-end">
         <span className="text-sm text-neutral-500 mr-auto">{examLocation}</span>
         <span className="text-sm text-neutral-500">
-          {/* comma seperated list of exam durations, e.g. 1h30m, 2h. If there is only one exam */}
           {examDates.length === 1
             ? minutesToHours(examDates[0].duration)
             : examDates
-                .map((dateInfo) => minutesToHours(dateInfo.duration))
-                .join(", ")
-                .replace(/, ([^,]*)$/, " and $1")}
+              .map((dateInfo) => minutesToHours(dateInfo.duration))
+              .join(", ")
+              .replace(/, ([^,]*)$/, " and $1")}
         </span>
       </div>
       {examDates.reverse().map(
