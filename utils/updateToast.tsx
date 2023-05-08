@@ -18,7 +18,7 @@ const updateToast = () => {
       Assorted bug fixes and improvements.
     </p>,
     {
-      duration: Infinity,
+      duration: 10000,
       id: "info",
     }
   );
