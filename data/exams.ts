@@ -3,6 +3,7 @@ interface ExamDate {
   location: string;
   duration: number; // in minutes
   paper?: number; // for IB exams
+  calculator?: 'graphing' | 'scientific' | 'four-function'
 }
 
 export interface ExamInfo {
@@ -59,12 +60,14 @@ export const ibExams: ExamInfo[] = [
         location: "M Gym",
         duration: 60,
         paper: 1,
+        calculator: 'scientific'
       },
       {
         date: new Date("2023-05-08T08:00:00-07:00"),
         location: "M Gym",
         duration: 120,
         paper: 2,
+        calculator: 'scientific'
       },
     ],
     subject: "Enviro Systems",
@@ -122,12 +125,14 @@ export const ibExams: ExamInfo[] = [
         location: "M Gym",
         duration: 90,
         paper: 1,
+        calculator: 'graphing'
       },
       {
         date: new Date("2023-05-09T12:00:00-07:00"),
         location: "M Gym",
         duration: 90,
         paper: 2,
+        calculator: 'graphing'
       },
     ],
     subject: "Math Applications",
@@ -147,6 +152,7 @@ export const ibExams: ExamInfo[] = [
         location: "M Gym",
         duration: 90,
         paper: 2,
+        calculator: 'graphing'
       },
       {
         date: new Date("2023-05-09T12:00:00-07:00"),
@@ -172,12 +178,14 @@ export const ibExams: ExamInfo[] = [
         location: "M Gym",
         duration: 90,
         paper: 2,
+        calculator: 'graphing'
       },
       {
         date: new Date("2023-05-09T12:00:00-07:00"),
         location: "M Gym",
         duration: 60,
         paper: 3,
+        calculator: 'graphing'
       },
     ],
     subject: "Math Analysis",
@@ -305,6 +313,7 @@ export const ibExams: ExamInfo[] = [
         location: "Donahue Gym",
         duration: 105,
         paper: 2,
+        calculator: 'scientific'
       },
     ],
     subject: "Economics",
@@ -388,12 +397,14 @@ export const ibExams: ExamInfo[] = [
         location: "G109",
         duration: 75,
         paper: 2,
+        calculator: 'scientific'
       },
       {
         date: new Date("2023-05-18T08:00:00-07:00"),
         location: "G109",
         duration: 60,
         paper: 3,
+        calculator: 'scientific'
       },
     ],
     subject: "Biology",
@@ -421,6 +432,7 @@ export const apExams: ExamInfo[] = [
         date: new Date("2023-05-01T12:00:00-07:00"),
         location: "Donahue Gym",
         duration: 195, // 3 hours, 15 minutes
+        calculator: 'graphing'
       },
     ],
     subject: "Chemistry",
@@ -457,6 +469,7 @@ export const apExams: ExamInfo[] = [
         date: new Date("2023-05-02T07:45:00-07:00"),
         location: "Donahue Gym",
         duration: 160, // 2 hours, 40 minutes
+        calculator: 'graphing'
       },
     ],
     subject: "Environmental Science",
@@ -505,6 +518,7 @@ export const apExams: ExamInfo[] = [
         date: new Date("2023-05-04T08:00:00-07:00"),
         location: "Donahue Gym",
         duration: 130, // 2 hours, 10 minutes
+        calculator: 'four-function'
       },
     ],
     subject: "Macroeconomics",
@@ -517,6 +531,7 @@ export const apExams: ExamInfo[] = [
         date: new Date("2023-05-04T12:00:00-07:00"),
         location: "Donahue Gym",
         duration: 180, // 3 hours
+        calculator: 'graphing'
       },
     ],
     subject: "Statistics",
@@ -553,6 +568,7 @@ export const apExams: ExamInfo[] = [
         date: new Date("2023-05-08T08:00:00-07:00"),
         location: "Donahue Gym",
         duration: 195, // 3 hours, 15 minutes
+        calculator: 'graphing'
       },
     ],
     subject: "Calculus AB",
@@ -565,6 +581,7 @@ export const apExams: ExamInfo[] = [
         date: new Date("2023-05-08T08:00:00-07:00"),
         location: "Donahue Gym",
         duration: 195, // 3 hours, 15 minutes
+        calculator: 'graphing'
       },
     ],
     subject: "Calculus BC",
@@ -613,6 +630,7 @@ export const apExams: ExamInfo[] = [
         date: new Date("2023-05-09T12:00:00-07:00"),
         location: "Donahue Gym",
         duration: 120, // 2 hours
+        calculator: 'graphing'
       },
     ],
     subject: "Physics C: Mechanics",
@@ -625,6 +643,7 @@ export const apExams: ExamInfo[] = [
         date: new Date("2023-05-09T14:00:00-07:00"),
         location: "Donahue Gym",
         duration: 120, // 2 hours
+        calculator: 'graphing'
       },
     ],
     subject: "Physics C: E&M",
@@ -661,6 +680,7 @@ export const apExams: ExamInfo[] = [
         date: new Date("2023-05-11T11:45:00-07:00"),
         location: "Donahue Gym",
         duration: 165, // 2 hours, 45 minutes
+        calculator: 'graphing'
       },
     ],
     subject: "Physics 1: Algebra",
@@ -697,6 +717,7 @@ export const apExams: ExamInfo[] = [
         date: new Date("2023-05-24T07:45:00-07:00"),
         location: "Donahue Gym",
         duration: 165, // 2 hours, 45 minutes
+        calculator: 'graphing'
       },
     ],
     subject: "Biology",

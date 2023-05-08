@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLocalStorage } from "usehooks-ts";
 
 import { Fraunces } from "next/font/google";
+import { useState } from "react";
 
 const fraunces = Fraunces({ subsets: ["latin"] });
 
@@ -46,6 +47,26 @@ const romanize = (number: number): string => {
     default:
       return "";
   }
+};
+
+const calculatorSymbol = (type: 'graphing' | 'scientific' | 'four-function'): string => {
+  switch (type) {
+    case 'graphing':
+      return 'G';
+
+    case 'scientific':
+      return 'S';
+
+    case 'four-function':
+      return 'F';
+
+    default:
+      return '';
+  }
+}
+
+const capitalize = (string: string): string => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
 const disableExams = (exams: string[]): string[] => {
@@ -91,6 +112,8 @@ const disableExams = (exams: string[]): string[] => {
 };
 
 const Exam = ({ exam, date }: ExamProps) => {
+  const [expanded, setExpanded] = useState(false);
+
   const examDates = exam.dates.filter((dateInfo) => {
     return (
       dateInfo.date.getDate() === date.getDate() &&
@@ -168,6 +191,26 @@ const Exam = ({ exam, date }: ExamProps) => {
             </div>
           )
       )}
+      {examDates.reverse()
+        .map((dateInfo) => dateInfo.calculator)
+        .filter((calculator, index, self) => self.indexOf(calculator) === index)
+        .filter((calculator) => calculator)
+        .map(
+          (calculator, index) =>
+            calculator && (
+              <div
+                className={clsx(
+                  "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
+                  fraunces.className
+                )}
+                style={{ left: `${-0.25 + index * 1.4}rem` }}
+                key={calculator}
+                title={capitalize(calculator) + " calculators recommended"}
+              >
+                {calculatorSymbol(calculator)}
+              </div>
+            )
+        )}
     </button>
   );
 };

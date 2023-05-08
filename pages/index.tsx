@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { useIsClient, useLocalStorage } from "usehooks-ts";
 import Head from "next/head";
 import onboardingToast from "@/utils/onboardingToast";
+import updateToast from "@/utils/updateToast";
 
 const inter = Inter({ subsets: ["latin"] });
 const fraunces = Fraunces({ subsets: ["latin"] });
@@ -22,6 +23,7 @@ export default function Home() {
     "onboarded",
     false
   );
+  const [updated, setUpdated] = useLocalStorage<boolean>("updated-1.1", false);
 
   const examsForDate = days.map((day) => {
     return bhsExams.filter((exam) => {
@@ -37,14 +39,18 @@ export default function Home() {
 
   const filteredExams = filterExams
     ? examsForDate.map((exams) =>
-        exams.filter((exam) => userExams.includes(exam.name))
-      )
+      exams.filter((exam) => userExams.includes(exam.name))
+    )
     : examsForDate;
 
   useEffect(() => {
     if (!onboarded) {
       onboardingToast();
       setOnboarded(true);
+      setUpdated(true);
+    } else if (!updated) {
+      updateToast();
+      setUpdated(true);
     }
   }, []);
 
@@ -113,7 +119,9 @@ export default function Home() {
           made with ❤️ by{" "}
           <a className="underline" href="https://eliothertenstein.com">
             eliot
-          </a>
+          </a>{" "}
+          ·{" "}
+          version <span className={fraunces.className}>1.1</span>
         </span>
       </main>
     </>

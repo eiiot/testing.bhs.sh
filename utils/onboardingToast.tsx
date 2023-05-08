@@ -43,6 +43,12 @@ const onboardingToast = () =>
       <span className={fraunces.className}>III</span>, etc.).
       <br />
       <br />
+      Calculators are permitted on some exams, and are denoted with a <span className={fraunces.className}>G</span>{" "}
+      for graphing calculator, <span className={fraunces.className}>S</span>{" "}
+      for scientific calculator, and <span className={fraunces.className}>F</span>{" "}
+      for four-function calculator.
+      <br />
+      <br />
       This site is open source. You can find the code on{" "}
       <a
         className="underline z-[999]"
