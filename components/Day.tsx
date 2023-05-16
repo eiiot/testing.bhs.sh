@@ -21,15 +21,19 @@ const dayToString = (date: Date) => {
   return days[date.getDay()];
 };
 
-const sortExamsForDay = (exams: )
-
 const Day = ({ date, exams }: DayProps) => {
   const sortedExams =
     // remove any days that are not on this date
-    exams.map(exam => ({
-      ...exam,
-      dates: exam.dates.filter(examDate => examDate.date.getDate() === date.getDate() && examDate.date.getMonth() === date.getMonth() && examDate.date.getFullYear() === date.getFullYear())
-    }))
+    exams
+      .map((exam) => ({
+        ...exam,
+        dates: exam.dates.filter(
+          (examDate) =>
+            examDate.date.getDate() === date.getDate() &&
+            examDate.date.getMonth() === date.getMonth() &&
+            examDate.date.getFullYear() === date.getFullYear()
+        ),
+      }))
       // sort by start time
       .sort((a, b) => {
         const aTime = a.dates[0].date;
@@ -48,18 +52,19 @@ const Day = ({ date, exams }: DayProps) => {
           ? "bg-neutral-50"
           : "bg-white",
         new Date().getDate() === date.getDate() &&
-        new Date().getMonth() === date.getMonth() &&
-        new Date().getFullYear() === date.getFullYear() &&
-        "ring-yellow-500 ring-1",
+          new Date().getMonth() === date.getMonth() &&
+          new Date().getFullYear() === date.getFullYear() &&
+          "ring-yellow-500 ring-1",
         // is the new date before the current date, or the month is before the current month, or the year is before the current year
-        (new Date().getDate() > date.getDate() || new Date().getMonth() > date.getMonth() || new Date().getFullYear() > date.getFullYear())
-        &&
-        "opacity-50 contrast-more:opacity-100"
+        (new Date().getDate() > date.getDate() ||
+          new Date().getMonth() > date.getMonth() ||
+          new Date().getFullYear() > date.getFullYear()) &&
+          "opacity-50 contrast-more:opacity-100"
       )}
       id={
         new Date().getDate() === date.getDate() &&
-          new Date().getMonth() === date.getMonth() &&
-          new Date().getFullYear() === date.getFullYear()
+        new Date().getMonth() === date.getMonth() &&
+        new Date().getFullYear() === date.getFullYear()
           ? "today"
           : ""
       }

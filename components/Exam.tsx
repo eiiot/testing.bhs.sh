@@ -49,21 +49,23 @@ const romanize = (number: number): string => {
   }
 };
 
-const calculatorSymbol = (type: 'graphing' | 'scientific' | 'four-function'): string => {
+const calculatorSymbol = (
+  type: "graphing" | "scientific" | "four-function"
+): string => {
   switch (type) {
-    case 'graphing':
-      return 'G';
+    case "graphing":
+      return "G";
 
-    case 'scientific':
-      return 'S';
+    case "scientific":
+      return "S";
 
-    case 'four-function':
-      return 'F';
+    case "four-function":
+      return "F";
 
     default:
-      return '';
+      return "";
   }
-}
+};
 
 const capitalize = (string: string): string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -112,8 +114,6 @@ const disableExams = (exams: string[]): string[] => {
 };
 
 const Exam = ({ exam, date }: ExamProps) => {
-  const [expanded, setExpanded] = useState(false);
-
   const examDates = exam.dates.filter((dateInfo) => {
     return (
       dateInfo.date.getDate() === date.getDate() &&
@@ -170,9 +170,9 @@ const Exam = ({ exam, date }: ExamProps) => {
           {examDates.length === 1
             ? minutesToHours(examDates[0].duration)
             : examDates
-              .map((dateInfo) => minutesToHours(dateInfo.duration))
-              .join(", ")
-              .replace(/, ([^,]*)$/, " and $1")}
+                .map((dateInfo) => minutesToHours(dateInfo.duration))
+                .join(", ")
+                .replace(/, ([^,]*)$/, " and $1")}
         </span>
       </div>
       {examDates.reverse().map(
@@ -191,7 +191,20 @@ const Exam = ({ exam, date }: ExamProps) => {
             </div>
           )
       )}
-      {examDates.reverse()
+      {examDates[0].makeup && (
+        <div
+          className={clsx(
+            "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
+            fraunces.className
+          )}
+          style={{ right: `${-0.25 + (examDates.length - 1) * 1.4}rem` }}
+          title={"Makeup exam"}
+        >
+          M
+        </div>
+      )}
+      {examDates
+        .reverse()
         .map((dateInfo) => dateInfo.calculator)
         .filter((calculator, index, self) => self.indexOf(calculator) === index)
         .filter((calculator) => calculator)

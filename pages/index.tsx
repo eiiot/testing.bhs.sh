@@ -23,7 +23,7 @@ export default function Home() {
     "onboarded",
     false
   );
-  const [updated, setUpdated] = useLocalStorage<boolean>("updated-1.1", false);
+  const [updated, setUpdated] = useLocalStorage<boolean>("updated-1.2", false);
 
   const examsForDate = days.map((day) => {
     return bhsExams.filter((exam) => {
@@ -35,12 +35,12 @@ export default function Home() {
         );
       });
     });
-  })
+  });
 
   const filteredExams = filterExams
     ? examsForDate.map((exams) =>
-      exams.filter((exam) => userExams.includes(exam.name))
-    )
+        exams.filter((exam) => userExams.includes(exam.name))
+      )
     : examsForDate;
 
   useEffect(() => {
@@ -120,8 +120,7 @@ export default function Home() {
           <a className="underline" href="https://eliothertenstein.com">
             eliot
           </a>{" "}
-          ·{" "}
-          version <span className={fraunces.className}>1.1</span>
+          · version <span className={fraunces.className}>1.1</span>
         </span>
       </main>
     </>
