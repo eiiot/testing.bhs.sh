@@ -16,6 +16,8 @@ const fraunces = Fraunces({ subsets: ["latin"] });
 const days = new Array(28).fill(0).map((_, i) => new Date(2023, 3, 27 + i));
 
 export default function Home() {
+  const version = "1.3";
+
   const isClient = useIsClient();
   const [filterExams, setFilterExams] = useState<boolean>(false);
   const [userExams, setUserExams] = useLocalStorage<string[]>("userExams", []);
@@ -23,7 +25,10 @@ export default function Home() {
     "onboarded",
     false
   );
-  const [updated, setUpdated] = useLocalStorage<boolean>("updated-1.2", false);
+  const [updated, setUpdated] = useLocalStorage<boolean>(
+    "updated-" + version,
+    false
+  );
 
   const examsForDate = days.map((day) => {
     return bhsExams.filter((exam) => {
@@ -120,7 +125,7 @@ export default function Home() {
           <a className="underline" href="https://eliothertenstein.com">
             eliot
           </a>{" "}
-          · version <span className={fraunces.className}>1.1</span>
+          · version <span className={fraunces.className}>{version}</span>
         </span>
       </main>
     </>
