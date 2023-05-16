@@ -35,7 +35,7 @@ export default function Home() {
         );
       });
     });
-  });
+  })
 
   const filteredExams = filterExams
     ? examsForDate.map((exams) =>

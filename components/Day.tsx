@@ -21,7 +21,25 @@ const dayToString = (date: Date) => {
   return days[date.getDay()];
 };
 
+const sortExamsForDay = (exams: )
+
 const Day = ({ date, exams }: DayProps) => {
+  const sortedExams =
+    // remove any days that are not on this date
+    exams.map(exam => ({
+      ...exam,
+      dates: exam.dates.filter(examDate => examDate.date.getDate() === date.getDate() && examDate.date.getMonth() === date.getMonth() && examDate.date.getFullYear() === date.getFullYear())
+    }))
+      // sort by start time
+      .sort((a, b) => {
+        const aTime = a.dates[0].date;
+        const bTime = b.dates[0].date;
+
+        if (aTime < bTime) return -1;
+        if (aTime > bTime) return 1;
+        return 0;
+      });
+
   return (
     <div
       className={clsx(
@@ -56,7 +74,7 @@ const Day = ({ date, exams }: DayProps) => {
           exams.length === 0 && "hidden"
         )}
       >
-        {exams.map((exam) => (
+        {sortedExams.map((exam) => (
           <Exam key={exam.name} exam={exam} date={date} />
         ))}
       </div>
