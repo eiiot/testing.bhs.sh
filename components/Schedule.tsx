@@ -29,7 +29,7 @@ export default function Schedule({ days, exams, link, year }: ScheduleProps) {
   const [filterExams, setFilterExams] = useState<boolean>(false);
   const [userExams, _] = useLocalStorage<string[]>(storageYear, []);
   const [onboarded, setOnboarded] = useLocalStorage<boolean>(
-    "onboarded",
+    "onboardedv2",
     false
   );
   const [updated, setUpdated] = useLocalStorage<boolean>(

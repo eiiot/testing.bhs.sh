@@ -4,6 +4,7 @@ import { Toaster } from "sonner";
 import clsx from "clsx";
 import { Fraunces, Inter } from "next/font/google";
 import { Metadata } from "next";
+import version from "@/utils/version";
 
 const inter = Inter({ subsets: ["latin"] });
 const fraunces = Fraunces({ subsets: ["latin"] });
@@ -26,8 +27,6 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const version = "1.3";
-
   return (
     <html lang="en">
       <body>
