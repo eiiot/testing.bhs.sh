@@ -5,7 +5,6 @@ import { bhsExams } from "@/data/2024";
 
 export const metadata: Metadata = {
   title: 'BHS Testing Schedule',
-  icons: "https://emojicdn.elk.sh/📝"
 }
 
 const days = new Array(20).fill(0).map((_, i) => new Date(2024, 4, 1 + i));
