@@ -100,16 +100,16 @@ const disableExams = (exams: string[]): string[] => {
     disabled.push("Economics SL");
   }
 
-  if (exams.includes("French SL")) {
-    disabled.push("French HL");
-  } else if (exams.includes("French HL")) {
-    disabled.push("French SL");
+  if (exams.includes("French B SL")) {
+    disabled.push("French B HL");
+  } else if (exams.includes("French B HL")) {
+    disabled.push("French B SL");
   }
 
-  if (exams.includes("Spanish SL")) {
-    disabled.push("Spanish HL");
-  } else if (exams.includes("Spanish HL")) {
-    disabled.push("Spanish SL");
+  if (exams.includes("Spanish B SL")) {
+    disabled.push("Spanish B HL");
+  } else if (exams.includes("Spanish B HL")) {
+    disabled.push("Spanish B SL");
   }
 
   if (exams.includes("Biology HL")) {
