@@ -1,4 +1,6 @@
-import { ExamInfo } from "@/data/exams";
+'use client';
+
+import { ExamInfo } from "@/data/types";
 import Exam from "./Exam";
 import clsx from "clsx";
 
@@ -8,14 +10,10 @@ interface DayProps {
 }
 
 const dateToString = (date: Date) => {
-  // return month/day
-
   return `${date.getMonth() + 1}/${date.getDate()}`;
 };
 
 const dayToString = (date: Date) => {
-  // return day of week
-
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[date.getDay()];
@@ -23,7 +21,6 @@ const dayToString = (date: Date) => {
 
 const Day = ({ date, exams }: DayProps) => {
   const sortedExams =
-    // remove any days that are not on this date
     exams
       .map((exam) => ({
         ...exam,
@@ -34,7 +31,6 @@ const Day = ({ date, exams }: DayProps) => {
             examDate.date.getFullYear() === date.getFullYear()
         ),
       }))
-      // sort by start time
       .sort((a, b) => {
         const aTime = a.dates[0].date;
         const bTime = b.dates[0].date;
@@ -52,19 +48,19 @@ const Day = ({ date, exams }: DayProps) => {
           ? "bg-neutral-50"
           : "bg-white",
         new Date().getDate() === date.getDate() &&
-          new Date().getMonth() === date.getMonth() &&
-          new Date().getFullYear() === date.getFullYear() &&
-          "ring-yellow-500 ring-1",
-        // is the new date before the current date, or the month is before the current month, or the year is before the current year
-        (new Date().getDate() > date.getDate() ||
-          new Date().getMonth() > date.getMonth() ||
-          new Date().getFullYear() > date.getFullYear()) &&
-          "opacity-50 contrast-more:opacity-100"
+        new Date().getMonth() === date.getMonth() &&
+        new Date().getFullYear() === date.getFullYear() &&
+        "ring-yellow-500 ring-1",
+        (new Date().getFullYear() >= date.getFullYear() &&
+          new Date().getMonth() >= date.getMonth() &&
+          new Date().getDate() > date.getDate()
+        ) &&
+        "opacity-50 contrast-more:opacity-100"
       )}
       id={
         new Date().getDate() === date.getDate() &&
-        new Date().getMonth() === date.getMonth() &&
-        new Date().getFullYear() === date.getFullYear()
+          new Date().getMonth() === date.getMonth() &&
+          new Date().getFullYear() === date.getFullYear()
           ? "today"
           : ""
       }

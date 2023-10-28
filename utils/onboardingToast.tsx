@@ -36,6 +36,13 @@ const onboardingToast = () =>
       those exams.
       <br />
       <br />
+      Calculators are permitted on some exams, and are denoted with a{" "}
+      <span className={fraunces.className}>G</span> for graphing calculator,{" "}
+      <span className={fraunces.className}>S</span> for scientific calculator,
+      and <span className={fraunces.className}>F</span> for four-function
+      calculator.
+      <br />
+      <br />
       IB exams have different papers for different days. Papers are displayed as
       tags, and are denoted with a roman numeral (
       <span className={fraunces.className}>I</span>,{" "}
@@ -44,11 +51,9 @@ const onboardingToast = () =>
       denoted with a <span className={fraunces.className}>M</span>.
       <br />
       <br />
-      Calculators are permitted on some exams, and are denoted with a{" "}
-      <span className={fraunces.className}>G</span> for graphing calculator,{" "}
-      <span className={fraunces.className}>S</span> for scientific calculator,
-      and <span className={fraunces.className}>F</span> for four-function
-      calculator.
+      IB Language exams have different formats. Reading exams are denoted with an {" "}
+      <span className={fraunces.className}>R</span>, while listening exams are denoted with an {" "}
+      <span className={fraunces.className}>L</span>.
       <br />
       <br />
       This site is open source. You can find the code on{" "}

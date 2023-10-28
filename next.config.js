@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   experimental: {
-    swcPlugins: [["next-superjson-plugin", { excluded: [] }]],
+    swcPlugins: [["next-superjson-plugin", {}]],
   },
 };
 

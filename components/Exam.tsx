@@ -1,10 +1,9 @@
-import { ExamInfo } from "@/data/exams";
+import { ExamInfo } from "@/data/types";
 import clsx from "clsx";
-import Link from "next/link";
 import { useLocalStorage } from "usehooks-ts";
-
 import { Fraunces } from "next/font/google";
-import { useState } from "react";
+import { YearContext } from "./Schedule";
+import { useContext } from "react";
 
 const fraunces = Fraunces({ subsets: ["latin"] });
 
@@ -67,6 +66,21 @@ const calculatorSymbol = (
   }
 };
 
+const langSymbol = (
+  type: "reading" | "listening"
+): string => {
+  switch (type) {
+    case "reading":
+      return "R";
+
+    case "listening":
+      return "L";
+
+    default:
+      return "";
+  }
+};
+
 const capitalize = (string: string): string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
@@ -122,7 +136,10 @@ const Exam = ({ exam, date }: ExamProps) => {
     );
   });
 
-  const [userExams, setUserExams] = useLocalStorage<string[]>("userExams", []);
+  const year = useContext(YearContext);
+  const storageYear = year == 2023 ? 'userExams' : 'userExams' + year;
+
+  const [userExams, setUserExams] = useLocalStorage<string[]>(storageYear, []);
 
   const disabledExams = disableExams(userExams);
 
@@ -170,9 +187,9 @@ const Exam = ({ exam, date }: ExamProps) => {
           {examDates.length === 1
             ? minutesToHours(examDates[0].duration)
             : examDates
-                .map((dateInfo) => minutesToHours(dateInfo.duration))
-                .join(", ")
-                .replace(/, ([^,]*)$/, " and $1")}
+              .map((dateInfo) => minutesToHours(dateInfo.duration))
+              .join(", ")
+              .replace(/, ([^,]*)$/, " and $1")}
         </span>
       </div>
       {examDates.reverse().map(
@@ -221,6 +238,27 @@ const Exam = ({ exam, date }: ExamProps) => {
                 title={capitalize(calculator) + " calculators recommended"}
               >
                 {calculatorSymbol(calculator)}
+              </div>
+            )
+        )}
+      {examDates
+        .reverse()
+        .map((dateInfo) => dateInfo.lang)
+        .filter((lang, index, self) => self.indexOf(lang) === index)
+        .filter((lang) => lang)
+        .map(
+          (lang, index) =>
+            lang && (
+              <div
+                className={clsx(
+                  "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
+                  fraunces.className
+                )}
+                style={{ left: `${-0.25 + index * 1.4}rem` }}
+                key={lang}
+                title={capitalize(lang) + " portion of exam"}
+              >
+                {langSymbol(lang)}
               </div>
             )
         )}

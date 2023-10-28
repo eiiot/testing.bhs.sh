@@ -1,18 +1,4 @@
-interface ExamDate {
-  date: Date;
-  location: string;
-  duration: number; // in minutes
-  paper?: number; // for IB exams
-  makeup?: boolean;
-  calculator?: "graphing" | "scientific" | "four-function";
-}
-
-export interface ExamInfo {
-  name: string;
-  dates: ExamDate[];
-  subject: string;
-  type: "ib" | "ap";
-}
+import { ExamInfo } from "./types";
 
 export const ibExams: ExamInfo[] = [
   {
@@ -486,7 +472,7 @@ export const apExams: ExamInfo[] = [
         calculator: "graphing",
       },
       {
-        date: new Date("2023-05-02T07:45:00-07:00"),
+        date: new Date("2023-05-17T12:00:00-07:00"),
         location: "Donahue Gym",
         duration: 160, // 2 hours, 40 minutes
         calculator: "graphing",
