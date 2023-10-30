@@ -124,6 +124,18 @@ const disableExams = (exams: string[]): string[] => {
     disabled.push("Calculus AB");
   }
 
+  if (exams.includes("Math Analysis SL")) {
+    disabled.push("Math Analysis HL");
+  } else if (exams.includes("Math Analysis HL")) {
+    disabled.push("Math Analysis SL");
+  }
+
+  if (exams.includes("Latin SL")) {
+    disabled.push("Latin HL");
+  } else if (exams.includes("Latin HL")) {
+    disabled.push("Latin SL");
+  }
+
   return disabled;
 };
 

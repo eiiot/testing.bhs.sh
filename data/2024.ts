@@ -391,6 +391,63 @@ export const ibExams: ExamInfo[] = [
     subject: "Biology",
     type: "ib",
   },
+  {
+    name: "Latin SL",
+    dates: [
+      {
+        date: dateFormatter(5, 6, 'a'),
+        // location: "G109",
+        duration: 90,
+        paper: 1,
+      },
+      {
+        date: dateFormatter(5, 7, 'm'),
+        // location: "G109",
+        duration: 90,
+        paper: 2,
+      },
+    ],
+    subject: "Latin",
+    type: "ib",
+  },
+  {
+    name: "Latin HL",
+    dates: [
+      {
+        date: dateFormatter(5, 6, 'a'),
+        // location: "G109",
+        duration: 120,
+        paper: 1,
+      },
+      {
+        date: dateFormatter(5, 7, 'm'),
+        // location: "G109",
+        duration: 90,
+        paper: 2,
+      },
+    ],
+    subject: "Latin",
+    type: "ib",
+  },
+  {
+    name: "ESS SL",
+    dates: [
+      {
+        date: dateFormatter(5, 2, 'a'),
+        // location: "G109",
+        duration: 60,
+        paper: 1,
+      },
+      {
+        date: dateFormatter(5, 6, 'm'),
+        // location: "G109",
+        duration: 120,
+        paper: 2,
+      },
+    ],
+    subject: "ESS",
+    type: "ib",
+  }
 ];
 
 export const bhsExams = [...ibExams];
