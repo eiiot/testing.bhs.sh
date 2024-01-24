@@ -49,7 +49,7 @@ const romanize = (number: number): string => {
 };
 
 const calculatorSymbol = (
-  type: "graphing" | "scientific" | "four-function"
+  type: "graphing" | "scientific" | "four-function",
 ): string => {
   switch (type) {
     case "graphing":
@@ -66,9 +66,7 @@ const calculatorSymbol = (
   }
 };
 
-const langSymbol = (
-  type: "reading" | "listening"
-): string => {
+const langSymbol = (type: "reading" | "listening"): string => {
   switch (type) {
     case "reading":
       return "R";
@@ -149,7 +147,7 @@ const Exam = ({ exam, date }: ExamProps) => {
   });
 
   const year = useContext(YearContext);
-  const storageYear = year == 2023 ? 'userExams' : 'userExams' + year;
+  const storageYear = year == 2023 ? "userExams" : "userExams" + year;
 
   const [userExams, setUserExams] = useLocalStorage<string[]>(storageYear, []);
 
@@ -172,7 +170,7 @@ const Exam = ({ exam, date }: ExamProps) => {
       className={clsx(
         "p-2 border-neutral-200 relative border-[1px] w-full rounded-sm flex flex-col space-y-2",
         userExams.includes(exam.name) && "ring-emerald-500 ring-1",
-        disabledExams.includes(exam.name) && "opacity-50 cursor-not-allowed"
+        disabledExams.includes(exam.name) && "opacity-50 cursor-not-allowed",
       )}
       onClick={() => {
         if (userExams.includes(exam.name)) {
@@ -183,25 +181,25 @@ const Exam = ({ exam, date }: ExamProps) => {
       }}
       disabled={disabledExams.includes(exam.name)}
     >
-      <div className="flex flex-row space-x-2 items-center justify-between w-full">
-        <span className="font-semibold mr-auto">
+      <div className="flex flex-row space-x-2 items-start justify-between w-full">
+        <span className="font-semibold mr-auto text-left">
           {exam.type.toUpperCase()} {exam.name}
         </span>
-        <span className="text-sm text-neutral-500">
+        <span className="text-sm text-neutral-500 min-w-[4rem]">
           {examDates[0].date.getHours() % 12 || 12}:
           {examDates[0].date.getMinutes().toString().padStart(2, "0")}{" "}
           {examDates[0].date.getHours() >= 12 ? "PM" : "AM"}
         </span>
       </div>
-      <div className="flex w-full flex-row space-x-2 items-center justify-end">
+      <div className="flex w-full flex-row space-x-2 items-start justify-end">
         <span className="text-sm text-neutral-500 mr-auto">{examLocation}</span>
         <span className="text-sm text-neutral-500">
           {examDates.length === 1
             ? minutesToHours(examDates[0].duration)
             : examDates
-              .map((dateInfo) => minutesToHours(dateInfo.duration))
-              .join(", ")
-              .replace(/, ([^,]*)$/, " and $1")}
+                .map((dateInfo) => minutesToHours(dateInfo.duration))
+                .join(", ")
+                .replace(/, ([^,]*)$/, " and $1")}
         </span>
       </div>
       {examDates.reverse().map(
@@ -210,7 +208,7 @@ const Exam = ({ exam, date }: ExamProps) => {
             <div
               className={clsx(
                 "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
-                fraunces.className
+                fraunces.className,
               )}
               style={{ right: `${-0.25 + index * 1.4}rem` }}
               key={examDate.paper}
@@ -218,13 +216,13 @@ const Exam = ({ exam, date }: ExamProps) => {
             >
               {romanize(examDate.paper)}
             </div>
-          )
+          ),
       )}
       {examDates[0].makeup && (
         <div
           className={clsx(
             "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
-            fraunces.className
+            fraunces.className,
           )}
           style={{ right: `${-0.25 + (examDates.length - 1) * 1.4}rem` }}
           title={"Makeup exam"}
@@ -243,7 +241,7 @@ const Exam = ({ exam, date }: ExamProps) => {
               <div
                 className={clsx(
                   "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
-                  fraunces.className
+                  fraunces.className,
                 )}
                 style={{ left: `${-0.25 + index * 1.4}rem` }}
                 key={calculator}
@@ -251,7 +249,7 @@ const Exam = ({ exam, date }: ExamProps) => {
               >
                 {calculatorSymbol(calculator)}
               </div>
-            )
+            ),
         )}
       {examDates
         .reverse()
@@ -264,7 +262,7 @@ const Exam = ({ exam, date }: ExamProps) => {
               <div
                 className={clsx(
                   "text-[11px] flex w-5 items-center justify-center text-neutral-500 absolute -bottom-2 bg-white border-[1px] rounded-full aspect-square",
-                  fraunces.className
+                  fraunces.className,
                 )}
                 style={{ left: `${-0.25 + index * 1.4}rem` }}
                 key={lang}
@@ -272,7 +270,7 @@ const Exam = ({ exam, date }: ExamProps) => {
               >
                 {langSymbol(lang)}
               </div>
-            )
+            ),
         )}
     </button>
   );
