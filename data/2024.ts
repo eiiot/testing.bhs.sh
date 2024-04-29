@@ -158,13 +158,13 @@ export const ibExams: ExamInfo[] = [
       {
         date: new Date("2024-05-01T12:00:00-07:00"),
         // location: "M Gym",
-        duration: 90,
+        duration: 120,
         paper: 1,
       },
       {
         date: new Date("2024-05-02T08:00:00-07:00"),
         // location: "M Gym",
-        duration: 90,
+        duration: 120,
         paper: 2,
         calculator: "graphing",
       },
