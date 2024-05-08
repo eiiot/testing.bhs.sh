@@ -12,13 +12,13 @@ export const ibExams: ExamInfo[] = [
     name: "Art History SL",
     dates: [
       {
-        date: new Date("2024-05-16T12:00:00-07:00"),
+        date: new Date("2024-05-16T12:45:00-07:00"),
         // location: "G109",
         duration: 60,
         paper: 1,
       },
       {
-        date: new Date("2024-05-17T08:00:00-07:00"),
+        date: new Date("2024-05-17T08:45:00-07:00"),
         // location: "G109",
         duration: 90,
         paper: 2,
@@ -31,13 +31,13 @@ export const ibExams: ExamInfo[] = [
     name: "Lang & Lit HL",
     dates: [
       {
-        date: new Date("2024-05-09T12:00:00-07:00"),
+        date: new Date("2024-05-09T12:45:00-07:00"),
         // location: "M Gym",
         duration: 135,
         paper: 1,
       },
       {
-        date: new Date("2024-05-10T08:00:00-07:00"),
+        date: new Date("2024-05-10T08:45:00-07:00"),
         // location: "M Gym",
         duration: 105,
         paper: 2,
@@ -50,14 +50,14 @@ export const ibExams: ExamInfo[] = [
   //   name: "Enviro Systems SL",
   //   dates: [
   //     {
-  //       date: new Date("2023-05-05T12:00:00-07:00"),
+  //       date: new Date("2023-05-05T12:45:00-07:00"),
   //       location: "M Gym",
   //       duration: 60,
   //       paper: 1,
   //       calculator: "scientific",
   //     },
   //     {
-  //       date: new Date("2023-05-08T08:00:00-07:00"),
+  //       date: new Date("2023-05-08T08:45:00-07:00"),
   //       location: "M Gym",
   //       duration: 120,
   //       paper: 2,
@@ -71,13 +71,13 @@ export const ibExams: ExamInfo[] = [
     name: "Computer Science SL",
     dates: [
       {
-        date: new Date("2024-05-02T12:00:00-07:00"),
+        date: new Date("2024-05-02T12:45:00-07:00"),
         // location: "M Gym",
         duration: 90,
         paper: 1,
       },
       {
-        date: new Date("2024-05-06T08:00:00-07:00"),
+        date: new Date("2024-05-06T08:45:00-07:00"),
         // location: "M Gym",
         duration: 60,
         paper: 2,
@@ -90,19 +90,19 @@ export const ibExams: ExamInfo[] = [
     name: "Computer Science HL",
     dates: [
       {
-        date: new Date("2024-05-02T12:00:00-07:00"),
+        date: new Date("2024-05-02T12:45:00-07:00"),
         // location: "M Gym",
         duration: 130,
         paper: 1,
       },
       {
-        date: new Date("2024-05-06T08:00:00-07:00"),
+        date: new Date("2024-05-06T08:45:00-07:00"),
         // location: "M Gym",
         duration: 80,
         paper: 2,
       },
       {
-        date: new Date("2024-05-06T08:00:00-07:00"),
+        date: new Date("2024-05-06T08:45:00-07:00"),
         // location: "M Gym",
         duration: 60,
         paper: 3,
@@ -115,14 +115,14 @@ export const ibExams: ExamInfo[] = [
     name: "Math Applications SL",
     dates: [
       {
-        date: new Date("2024-05-01T12:00:00-07:00"),
+        date: new Date("2024-05-01T12:45:00-07:00"),
         // location: "M Gym",
         duration: 90,
         paper: 1,
         calculator: "graphing",
       },
       {
-        date: new Date("2024-05-02T08:00:00-07:00"),
+        date: new Date("2024-05-02T08:45:00-07:00"),
         // location: "M Gym",
         duration: 90,
         paper: 2,
@@ -136,13 +136,13 @@ export const ibExams: ExamInfo[] = [
     name: "Math Analysis SL",
     dates: [
       {
-        date: new Date("2024-05-01T12:00:00-07:00"),
+        date: new Date("2024-05-01T12:45:00-07:00"),
         // location: "M Gym",
         duration: 90,
         paper: 1,
       },
       {
-        date: new Date("2024-05-02T08:00:00-07:00"),
+        date: new Date("2024-05-02T08:45:00-07:00"),
         // location: "M Gym",
         duration: 90,
         paper: 2,
@@ -156,20 +156,20 @@ export const ibExams: ExamInfo[] = [
     name: "Math Analysis HL",
     dates: [
       {
-        date: new Date("2024-05-01T12:00:00-07:00"),
+        date: new Date("2024-05-01T12:45:00-07:00"),
         // location: "M Gym",
         duration: 120,
         paper: 1,
       },
       {
-        date: new Date("2024-05-02T08:00:00-07:00"),
+        date: new Date("2024-05-02T08:45:00-07:00"),
         // location: "M Gym",
         duration: 120,
         paper: 2,
         calculator: "graphing",
       },
       {
-        date: new Date("2024-05-06T12:00:00-07:00"),
+        date: new Date("2024-05-06T12:45:00-07:00"),
         // location: "M Gym",
         duration: 60,
         paper: 3,
@@ -523,7 +523,7 @@ export const apExams: ExamInfo[] = [
         calculator: "graphing",
       },
       // {
-      //   date: new Date("2023-05-17T12:00:00-07:00"),
+      //   date: new Date("2023-05-17T12:45:00-07:00"),
       //   location: "Donahue Gym",
       //   duration: 160, // 2 hours, 40 minutes
       //   calculator: "graphing",
